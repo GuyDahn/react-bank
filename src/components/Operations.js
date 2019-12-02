@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 
 class Operations extends Component {
@@ -12,18 +11,23 @@ class Operations extends Component {
         this.updateText = this.updateText.bind(this)
     }
     addDepoz = () => {
-        this.props.addDepoz(this.state.amount, this.state.vendor, this.state.category)
+        this.props.addDepoz(
+            this.state.amount,
+            this.state.vendor,
+            this.state.category)
     }
 
     addWithdraw = () => {
-        this.props.addWithdraw(this.state.amount, this.state.vendor, this.state.category)
+        this.props.addWithdraw(
+            this.state.amount,
+            this.state.vendor,
+            this.state.category)
     }
 
     updateText = (event) => {
-        const target = event.target
-        const value = target.value
-        const name = target.name
-
+        let target = event.target
+        let value = target.value
+        let name = target.name
         this.setState({
             [name]: value
         })
@@ -32,11 +36,20 @@ class Operations extends Component {
     render() {
         return (
             <div className='operations'>
-                <input type='number' id='amount' placeholder='Amount' onChange={this.updateText}></input>
-                <input type='text' id='vendor' placeholder='Vendor' onChange={this.updateText}></input>
-                <input type='text' id='category' placeholder='Category' onChange={this.updateText}></input>
-                <button className='depoz' onClick={this.addDepoz}>Depoz</button>
-                <button className='withdraw' onClick={this.addWithdraw}>Withdraw</button>
+                <input type='number' name='amount'
+                    placeholder='Amount' onChange={this.updateText} />
+                
+                <input type='text' name='vendor'
+                    placeholder='Vendor' onChange={this.updateText} />
+                
+                <input type='text' name='category'
+                    placeholder='Category' onChange={this.updateText} />
+                
+                <button className='depoz'
+                    onClick={this.addDepoz}>Depoz</button>
+                
+                <button className='withdraw'
+                    onClick={this.addWithdraw}>Withdraw</button>
             </div>)
     }
 }

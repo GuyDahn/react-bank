@@ -48,7 +48,7 @@ export class App extends Component {
 
   removeTrans = (i) => {
     let transactions = [...this.state.transactions]
-    transactions.splice(1, 1)
+    transactions.splice(i, 1)
     this.setState({ transactions })
   }
 
@@ -66,13 +66,17 @@ export class App extends Component {
     return (
       <div className="app">
         <h1>Welcome To Schitti Bank</h1>
+
+        <h4 id='balance'>
+          Total balance: {this.calcBalance()}
+        </h4>
+        <br></br>
         <div id='operations'>
           <Operations addDepoz={this.addDepoz}
             addWidthraw={this.addWidthraw} />
         </div>
-        <div id='balance'>
-          Total balance: {this.calcBalance()}
-        </div>
+        <br></br>
+
         <Transactions transactions={this.state.transactions}
           removeTrans={this.removeTrans} />
       </div>

@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const Transaction = require('../models/transactionSchema')
 
-
 router.get('http://localhost:4200/transactions', function (req, res) {
     Transaction.find({}, function (err, transactions) {
         console.log(transactions)
