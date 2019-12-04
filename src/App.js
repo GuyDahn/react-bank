@@ -97,30 +97,27 @@ export class App extends Component {
           </div>
 
           <br></br>
-          <Route exact path='/' exact render={() => <Transactions
-            transactions={this.state.transactions}
-            removeTrans={this.removeTrans}
-            calcBalance={this.calcBalance()}/>} >
-            <div id='home'>
-
-              <br></br>
-            </div>
+          <Route exact path='/' exact render={() =>
+            <Transactions
+              transactions={this.state.transactions}
+              removeTrans={this.removeTrans}
+              calcBalance={this.calcBalance()}
+            />} >
           </Route>
 
-          <Route exact path='/add'>
-          <div id='operations'>
+          <Route exact path='/add' exact render={() =>
             <Operations
               addDepoz={this.addDepoz}
-              addWithdraw={this.addWithdraw} />
-          </div>
+              addWithdraw={this.addWithdraw}
+            />}>
           </Route>
 
-          <Route path="/category">
-            <div id='category'>
-              <Category transactions={this.state.transactions} />
-            </div>
+          <Route path="/category" exact render={() =>
+            <Category
+              transactions={this.state.transactions}
+            />}>
           </Route>
-
+          
         </div>
       </Router>
     )

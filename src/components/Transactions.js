@@ -13,10 +13,10 @@ class Transactions extends Component {
                 </h3>
                 <h3 id='trans-title'>My Transactions:</h3>
                 {this.props.transactions.map((t, i) =>
-                    <div key={i}> <Transaction
-                        data={t}
-                        id={i}
-                        removeTrans={this.props.removeTrans} />
+                    <div key={i}>
+                        <Transaction data={t} id={i}
+                            removeTrans={this.props.removeTrans}
+                        />
                     </div>
                 )}
             </div>)
