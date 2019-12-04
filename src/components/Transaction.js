@@ -11,7 +11,9 @@ class Transaction extends Component {
         return (
             <div>
                 <button onClick={this.removeTrans}>&#215;</button>
-                {this.props.data.vendor} {this.props.data.amount} {this.props.data.category}
+                {this.props.data.vendor}
+                {this.props.data.amount}
+                {this.props.data.category}
             </div>)
     }
 }

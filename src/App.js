@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
 import './App.css';
 import axios from 'axios'
 import Transactions from './components/Transactions';
 import Operations from './components/Operations'
+import Category from './components/Category'
 
 
 export class App extends Component {
   constructor() {
     super()
     this.state = {
-      transactions: [
-        // { amount: 3200, vendor: "Elevation", category: "Salary" },
-        // { amount: -7, vendor: "Runescape", category: "Entertainment" },
-        // { amount: -20, vendor: "Subway", category: "Food" },
-        // { amount: -98, vendor: "La Baguetterie", category: "Food" }
-      ]
+      transactions: []
     }
   }
 
@@ -38,32 +36,29 @@ export class App extends Component {
   }
 
   addWithdraw = async (amount, vendor, category) => {
-    try{
-    await axios.delete(`http://localhost:4200/transaction`, {
-      amount: -parseInt(amount),
-      vendor: vendor, category:
-        category.toLowerCase()
-    })
-      .then(res => {
-        // console.log(res.data);
-        let transactions = [...this.state.transactions]
-        transactions.push(res.data)
-        this.setState({ transactions })
+    try {
+      await axios.delete(`http://localhost:4200/transaction`, {
+        amount: -parseInt(amount),
+        vendor: vendor, category:
+          category.toLowerCase()
       })
+        .then(res => {
+          let transactions = [...this.state.transactions]
+          transactions.push(res.data)
+          this.setState({ transactions })
+        })
     } catch (err) {
       console.log(err)
     }
   }
 
   removeTrans = async (id) => {
-    try{
-    let transactions = [...this.state.transactions]
-    let tid = transactions[id]._id
-    console.log(transactions[id]._id)
-    
-    await axios.delete(`http://localhost:4200/transaction/${tid}`)
-    await this.componentDidMount()
-    } catch(err) {
+    try {
+      let transactions = [...this.state.transactions]
+      let tid = transactions[id]._id
+      await axios.delete(`http://localhost:4200/transaction/${tid}`)
+      await this.componentDidMount()
+    } catch (err) {
       console.log(err)
     }
   }
@@ -80,29 +75,54 @@ export class App extends Component {
   }
 
   async componentDidMount() {
-   await this.renderTransactions()
+    await this.renderTransactions()
   }
 
   render() {
     return (
-      <div className="app">
-        <h1>Welcome To Schitti Bank</h1>
+      <Router>
+        <div className="app">
+          <h1>Schitti Bank</h1>
 
-        <h4 id='balance'>
-          Total balance: {this.calcBalance()}
-        </h4>
-        <br></br>
-        <div id='operations'>
-          <Operations
-            addDepoz={this.addDepoz}
-            addWithdraw={this.addWithdraw} />
+          <div id='menu'>
+            <button>
+              <Link to="/">Home</Link>
+            </button>
+            <button>
+              <Link to="/add">Add Transaction</Link>
+            </button>
+            <button>
+              <Link to="/category">Categories</Link>
+            </button>
+          </div>
+
+          <br></br>
+          <Route exact path='/' exact render={() => <Transactions
+            transactions={this.state.transactions}
+            removeTrans={this.removeTrans}
+            calcBalance={this.calcBalance()}/>} >
+            <div id='home'>
+
+              <br></br>
+            </div>
+          </Route>
+
+          <Route exact path='/add'>
+          <div id='operations'>
+            <Operations
+              addDepoz={this.addDepoz}
+              addWithdraw={this.addWithdraw} />
+          </div>
+          </Route>
+
+          <Route path="/category">
+            <div id='category'>
+              <Category transactions={this.state.transactions} />
+            </div>
+          </Route>
+
         </div>
-        <br></br>
-
-        <Transactions
-          transactions={this.state.transactions}
-          removeTrans={this.removeTrans} />
-      </div>
+      </Router>
     )
   }
 }
