@@ -2,10 +2,20 @@ const express = require('express')
 const app = express()
 const api = require('./server/routes/api')
 const bodyParser = require("body-parser")
+const path = require('path')
+
+app.use(express.static(path.join(__dirname, 'src')))
+app.use(express.static(path.join(__dirname, 'node_modules')))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
 
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/transactions', { useNewUrlParser: true, useUnifiedTopology: true })
-
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/transactionsDB', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+})
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -20,7 +30,6 @@ app.use(function (req, res, next) {
 
 app.use('/', api)
 
-const port = process.env.PORT || 4200
-app.listen(port, function () {
-    console.log(`Running on port ${port}`)
-})
+const PORT = process.env.PORT || 4200
+app.listen(process.env.PORT || PORT, () => console.log('Running on port: ' + PORT))
+

@@ -49,7 +49,7 @@ class Operations extends Component {
                     onClick={this.addDepoz}>Depoz</button>
                 
                 <button className='withdraw'
-                    onClick={this.addWithdraw}>Withdraw</button>
+                    onClick={this.state.addWithdraw}>Withdraw</button>
             </div>)
     }
 }
