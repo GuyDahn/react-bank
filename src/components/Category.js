@@ -35,13 +35,13 @@ class Category extends Component {
                     <div>
                         <h4> {m[0].category} </h4>
                     </div>
-                    
+
                     <div key={i}> {m.map((m, i) =>
                         <div key={i}><i>{m.vendor}</i> ${m.amount}
                             {m.date}
                         </div>
                     )}
-                        
+
                     </div>
                     <hr></hr>
                 </div>)}

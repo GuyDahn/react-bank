@@ -29,7 +29,7 @@ body {
   grid-row-end: 3;
 }
 
-hr {
+.hr {
   color: #a7d129
 }
 
@@ -73,15 +73,18 @@ a {
 #balance {
   text-align: center;
   font-weight: 1000;
+  color: #91bd3a;
 }
 
 #trans-title {
   text-decoration: underline;
   text-align: left;
+  color: #ff7315;
 }
 
 ul {
   list-style: none;
+  color: #a7d129;
 }
 
 .single-trans {
@@ -90,9 +93,10 @@ ul {
 
 .dlt-btn {
   background: #2c2828;
-  color: #a7d129;
+  color: #ff7315;
   margin-right: 10px;
   border-radius: 100mm;
+  font-weight: 1000;
 }
 
 .op-btn {
@@ -102,8 +106,14 @@ ul {
   margin: 15px;
   margin-left: 20px;
   border-radius: 10% 10px;
+  font-weight: 800;
+  font-size: 20px;
 }
 
 input {
-  border-radius: 10% 10px;
+  border-radius: 10px;
+  background: none;
+  border-color: #a7d129;
+  color: #a7d129;
+  font-size: 16px;
 }

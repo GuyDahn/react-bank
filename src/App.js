@@ -25,7 +25,6 @@ export class App extends Component {
   }
 
   addDepoz = async (amount, vendor, category) => {
-
     await axios.post(`http://localhost:4200/transaction`, {
       amount: parseInt(amount),
       vendor: vendor,
@@ -83,7 +82,7 @@ export class App extends Component {
     return (
       <Router>
         <div className="app">
-          <h1>Schitti Bank</h1>
+          <h1>darkmode Bank</h1>
 
           <div id='menu'>
             <button className='nav'>

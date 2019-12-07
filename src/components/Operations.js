@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Operations extends Component {
     constructor() {
@@ -62,16 +63,20 @@ class Operations extends Component {
                         />
                     </li>
                 </ul>
-                <button
-                    className='op-btn'
-                    onClick={this.addDepoz}>
-                    Depoz
+                <Link to='/'>
+                    <button
+                        className='op-btn'
+                        onClick={this.addDepoz}>
+                        Depoz
                 </button>
-                <button
-                    className='op-btn'
-                    onClick={this.state.addWithdraw}>
-                    Withdraw
+                </Link>
+                <Link to='/'>
+                    <button
+                        className='op-btn'
+                        onClick={this.state.addWithdraw}>
+                        Whizraw
                 </button>
+                </Link>
             </div>)
     }
 }

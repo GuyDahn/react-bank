@@ -35,6 +35,7 @@ class Transaction extends Component {
                         {this.props.data.category}
                       </i>
                 </p>
+                <img />
                 <hr />
             </div >)
     }
