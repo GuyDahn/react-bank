@@ -85,13 +85,13 @@ export class App extends Component {
           <h1>Schitti Bank</h1>
 
           <div id='menu'>
-            <button>
+            <button className='nav'>
               <Link to="/">Home</Link>
             </button>
-            <button>
+            <button className='nav'>
               <Link to="/add">Add Transaction</Link>
             </button>
-            <button>
+            <button className='nav'>
               <Link to="/category">Categories</Link>
             </button>
           </div>

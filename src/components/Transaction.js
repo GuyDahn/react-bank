@@ -14,16 +14,22 @@ class Transaction extends Component {
                     onClick={this.removeTrans}>
                     &#215;
                 </button>
-                ${this.props.data.amount}
-                <br></br>
-                vendor: <i>
-                    {this.props.data.vendor}
+                <i id='amount'>
+                    ${this.props.data.amount}
                 </i>
-                <br></br>
-                purpose: <i>
-                    {this.props.data.category}
-                </i>
-            </div>)
+                <p> Vendor:
+                 <i>
+                        {this.props.data.vendor}
+                    </i>
+                </p>
+
+                <p>Purpose:
+                <i>
+                        {this.props.data.category}
+                    </i>
+                </p>
+                <hr />
+            </div >)
     }
 }
 export default Transaction
