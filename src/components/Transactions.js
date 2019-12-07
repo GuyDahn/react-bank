@@ -9,7 +9,7 @@ class Transactions extends Component {
         return (
             <div className="transactions">
                 <h3 id='balance'>
-                    Total balance: {this.props.calcBalance}
+                    Total balance: ${this.props.calcBalance}
                 </h3>
                 <h3 id='trans-title'>My Transactions:</h3>
                 {this.props.transactions.map((t, i) =>

@@ -99,6 +99,7 @@ export class App extends Component {
           <br></br>
           <Route exact path='/' exact render={() =>
             <Transactions
+              className='transactions'
               transactions={this.state.transactions}
               removeTrans={this.removeTrans}
               calcBalance={this.calcBalance()}
@@ -107,6 +108,7 @@ export class App extends Component {
 
           <Route exact path='/add' exact render={() =>
             <Operations
+              className='operations'
               addDepoz={this.addDepoz}
               addWithdraw={this.addWithdraw}
             />}>

@@ -9,11 +9,20 @@ class Transaction extends Component {
 
     render() {
         return (
-            <div>
-                <button onClick={this.removeTrans}>&#215;</button>
-                {this.props.data.vendor}
-                {this.props.data.amount}
-                {this.props.data.category}
+            <div className="single-trans">
+                <button className='dlt-btn'
+                    onClick={this.removeTrans}>
+                    &#215;
+                </button>
+                ${this.props.data.amount}
+                <br></br>
+                vendor: <i>
+                    {this.props.data.vendor}
+                </i>
+                <br></br>
+                purpose: <i>
+                    {this.props.data.category}
+                </i>
             </div>)
     }
 }

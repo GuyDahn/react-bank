@@ -36,20 +36,45 @@ class Operations extends Component {
     render() {
         return (
             <div className='operations'>
-                <input type='number' name='amount'
-                    placeholder='Amount' onChange={this.updateText} />
-                
-                <input type='text' name='vendor'
-                    placeholder='Vendor' onChange={this.updateText} />
-                
-                <input type='text' name='category'
-                    placeholder='Category' onChange={this.updateText} />
-                
-                <button className='depoz'
-                    onClick={this.addDepoz}>Depoz</button>
-                
-                <button className='withdraw'
-                    onClick={this.state.addWithdraw}>Withdraw</button>
+                <ul>
+                    <li>
+                        <input
+                            type='number'
+                            name='amount'
+                            placeholder='Amount'
+                            onChange={this.updateText}
+                        />
+                    </li>
+                    <li>
+                        <input
+                            type='text'
+                            name='vendor'
+                            placeholder='Vendor'
+                            onChange={this.updateText}
+                        />
+                    </li>
+                    <li>
+                        <input
+                            type='text'
+                            name='category'
+                            placeholder='Category'
+                            onChange={this.updateText}
+                        />
+                    </li>
+                </ul>
+
+                <button
+                    className='op-btn'
+                    
+                    onClick={this.addDepoz}>
+                    Depoz
+                </button>
+
+                <button
+                    className='op-btn'
+                    onClick={this.state.addWithdraw}>
+                    Withdraw
+                </button>
             </div>)
     }
 }

@@ -1,8 +1,85 @@
+.app {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  color: #fff;
+  font-size: 18px;
+}
+
 body {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  height: 100vh;
+  background: linear-gradient(15deg, rgb(36, 5, 5), rgb(51, 37, 179));
+  -webkit-font-smoothing: antialiased;
 }
 
-menu {
-  margin: 16px
+#menu {
+  margin: 16px;
+  grid-column-start: 1;
+  grid-row-end: 3;
 }
 
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 2em;
+  color: #ff3643;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(23, 23, 23, 1), 1px 1px 0 rgba(23, 23, 23, 0.9), 1px 1px 0 rgba(23, 23, 23, 0.8), 2px 4px 0 rgba(23, 23, 23, 0.7), 5px 5px 0 rgba(23, 23, 23, 0.6), 6px 6px 0 rgba(23, 23, 23, 0.5), 7px 7px 0 rgba(23, 23, 23, 0.4), 8px 8px 0 rgba(23, 23, 23, 0.3), 9px 9px 0 rgba(23, 23, 23, 0.2), 10px 10px 0 rgba(23, 23, 23, 0.1);
+}
+
+button {
+  text-transform: uppercase;
+}
+
+.transactions {
+  text-align: left;
+}
+
+.operations {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#balance {
+  text-align: center;
+}
+
+#trans-title {
+  text-decoration: underline;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+.single-trans {
+  padding: 10px;
+
+}
+
+.dlt-btn {
+  background: #3298CE;
+  color: #fff;
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+}
+
+.op-btn {
+  background: #3298CE;
+  color: #fff;
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  margin-left: 20px;
+  border-radius: 10% 10px;
+}
+
+input {
+  border-radius: 10% 10px;
+}
