@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-
 import './App.css';
 import axios from 'axios'
 import Transactions from './components/Transactions';
 import Operations from './components/Operations'
 import Category from './components/Category'
 
-
 export class App extends Component {
   constructor() {
     super()
     this.state = {
-      transactions: []
+      transactions: [],
+      date: ""
     }
   }
 
@@ -30,7 +29,8 @@ export class App extends Component {
     await axios.post(`http://localhost:4200/transaction`, {
       amount: parseInt(amount),
       vendor: vendor,
-      category: category.toLowerCase()
+      category: category.toLowerCase(),
+      date: new Date()
     })
     await this.componentDidMount()
   }
@@ -39,8 +39,9 @@ export class App extends Component {
     try {
       await axios.delete(`http://localhost:4200/transaction`, {
         amount: -parseInt(amount),
-        vendor: vendor, category:
-          category.toLowerCase()
+        vendor: vendor,
+        category: category.toLowerCase(),
+        date: new Date()
       })
         .then(res => {
           let transactions = [...this.state.transactions]
@@ -119,7 +120,7 @@ export class App extends Component {
               transactions={this.state.transactions}
             />}>
           </Route>
-          
+
         </div>
       </Router>
     )

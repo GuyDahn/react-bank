@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Moment from 'react-moment';
 
 class Transaction extends Component {
 
@@ -18,15 +18,22 @@ class Transaction extends Component {
                     ${this.props.data.amount}
                 </i>
                 <p> Vendor:
-                 <i>
+                     <i>
                         {this.props.data.vendor}
                     </i>
                 </p>
-
-                <p>Purpose:
-                <i>
-                        {this.props.data.category}
+                <p>
+                    date:
+                       <i>
+                        <Moment format="DD.MM.YY">{this.props.data.date}</Moment>
                     </i>
+                </p>
+
+                <p>
+                    Purpose:
+                       <i>
+                        {this.props.data.category}
+                      </i>
                 </p>
                 <hr />
             </div >)

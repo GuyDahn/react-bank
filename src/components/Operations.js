@@ -62,14 +62,11 @@ class Operations extends Component {
                         />
                     </li>
                 </ul>
-
                 <button
                     className='op-btn'
-                    
                     onClick={this.addDepoz}>
                     Depoz
                 </button>
-
                 <button
                     className='op-btn'
                     onClick={this.state.addWithdraw}>
