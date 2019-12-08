@@ -11,7 +11,6 @@ export class App extends Component {
     super()
     this.state = {
       transactions: [],
-      date: ''
     }
   }
 
@@ -25,23 +24,31 @@ export class App extends Component {
   }
 
   addDepoz = async (amount, vendor, category) => {
-    await axios.post("http://localhost:4200/transaction", {
-      amount: parseInt(amount),
-      vendor: vendor,
-      category: category.toLowerCase(),
-      date: new Date()
-    })
-    await this.componentDidMount()
+    try {
+      await axios.post("http://localhost:4200/transaction", {
+        amount: parseInt(amount),
+        vendor: vendor,
+        category: category.toLowerCase(),
+        date: new Date()
+      })
+      await this.renderTransactions()
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   addWithdraw = async (amount, vendor, category) => {
-    await axios.post("http://localhost:4200/transaction", {
-      amount: -parseInt(amount),
-      vendor: vendor,
-      category: category.toLowerCase(),
-      date: new Date()
-    })
-    await this.componentDidMount()
+    try {
+      await axios.post("http://localhost:4200/transaction", {
+        amount: -parseInt(amount),
+        vendor: vendor,
+        category: category.toLowerCase(),
+        date: new Date()
+      })
+      await this.renderTransactions()
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   removeTrans = async (id) => {
@@ -50,7 +57,7 @@ export class App extends Component {
       let tid = transactions[id]._id
       await axios
         .delete(`http://localhost:4200/transaction/${tid}`)
-      await this.componentDidMount()
+      await this.renderTransactions()
     } catch (err) {
       console.log(err)
     }

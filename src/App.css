@@ -36,7 +36,8 @@ body {
 }
 
 #menu {
-  margin: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   grid-column-start: 1;
   grid-row-end: 3;
 }

@@ -16,12 +16,12 @@ class Category extends Component {
     }
 
     breakByCateg = () => {
-        const breakdown = this.findCateg()
+        const findCateg = this.findCateg()
         let transactions = this.props.transactions
         const result = []
-        for (let i = 0; i < breakdown.length; i++) {
+        for (let i = 0; i < findCateg.length; i++) {
             let categories = transactions
-                .filter(c => c.category === breakdown[i])
+                .filter(c => c.category === findCateg[i])
                 .map(c => c)
             result.push(categories)
         }
