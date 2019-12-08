@@ -89,7 +89,7 @@ export class App extends Component {
             <button className='nav'>
               <Link to="/">Home</Link>
             </button>
-
+            
             <button className='nav'>
               <Link to="/add">Add Transaction</Link>
             </button>

@@ -4,7 +4,7 @@ class Category extends Component {
 
 
 
-    findCategType = () => {
+    findTransactionType = () => {
         let transactions = this.props.transactions
         let categories = []
         for (let i = 0; i < transactions.length; i++) {
@@ -18,7 +18,7 @@ class Category extends Component {
     }
 
     sortByCateg = () => {
-        const findCateg = this.findCategType()
+        const findCateg = this.findTransactionType()
         let transactions = this.props.transactions
         const categArr = []
         for (let i = 0; i < findCateg.length; i++) {

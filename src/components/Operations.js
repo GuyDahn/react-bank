@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import Snackbars  from './Snackbars'
 
 class Operations extends Component {
     constructor() {
@@ -79,12 +78,6 @@ class Operations extends Component {
                         Whizraw
                 </button>
                 </Link>
-                {/* <Snackbars
-                    displayAlert={displayAlert}
-                    balance={balance}
-                    manageExpenses={this.manageExpenses}
-                    input={state}
-                /> */}
             </div>)
     }
 }
