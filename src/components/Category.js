@@ -15,14 +15,14 @@ class Category extends Component {
     }
 
     breakByCateg = () => {
-        let breakdown = this.findCateg()
+        const breakdown = this.findCateg()
         let transactions = this.props.transactions
-        let result = []
+        const result = []
         for (let i = 0; i < breakdown.length; i++) {
-            let arr = transactions
+            let categories = transactions
                 .filter(c => c.category === breakdown[i])
                 .map(c => c)
-            result.push(arr)
+            result.push(categories)
         }
         return result
     }
@@ -31,20 +31,20 @@ class Category extends Component {
         let category = this.breakByCateg()
         return (
             <div>
-                {category.map((m, i) => <div key={i}>
-                    <div>
-                        <h4> {m[0].category} </h4>
-                    </div>
+                {category.map((c,i) =>
+                    <div key={i}>
 
-                    <div key={i}> {m.map((m, i) =>
-                        <div key={i}><i>{m.vendor}</i> ${m.amount}
-                            {m.date}
+                        <h4> {c[0].category} </h4>
+
+                        <div key={i}> {c.map((c, i) =>
+                            <div key={i}>
+                                <i>{c.vendor}</i>
+                                ${c.amount} 
+                            </div>)}
                         </div>
-                    )}
-
+                        <hr />
                     </div>
-                    <hr></hr>
-                </div>)}
+                )}
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Snackbars  from './Snackbars'
+// import Snackbars  from './Snackbars'
 
 class Operations extends Component {
     constructor() {
@@ -11,8 +11,8 @@ class Operations extends Component {
             category: "",
             date: ""
         }
-        this.updateText = this.updateText.bind(this)
     }
+
     addDepoz = () => {
         this.props.addDepoz(
             this.state.amount,
@@ -37,10 +37,6 @@ class Operations extends Component {
     }
 
     render() {
-        let state = this.state
-        let balance = this.props.balance
-        let displayAlert = this.props.displayAlert
-
         return (
             <div className='operations'>
                 <ul>
@@ -79,7 +75,7 @@ class Operations extends Component {
                 <Link to='/'>
                     <button
                         className='op-btn'
-                        onClick={this.state.addWithdraw}>
+                        onClick={this.addWithdraw}>
                         Whizraw
                 </button>
                 </Link>

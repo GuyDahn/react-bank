@@ -10,8 +10,6 @@ class Transaction extends Component {
     render() {
         return (
             <div className="single-trans">
-
-
                 <p>
                     Date:
                        <i>
@@ -24,27 +22,21 @@ class Transaction extends Component {
                         {this.props.data.vendor}
                     </i>
                 </p>
-
                 <hr />
-
                 <p>
                     Purpose:
                        <i>
                         {this.props.data.category}
                     </i>
                 </p>
-
                 <hr />
-
                 <i id='amount'>
                     ${this.props.data.amount}
                 </i>
-
                 <button className='dlt-btn'
                     onClick={this.removeTrans}>
                     &#215;
                 </button>
-
             </div >)
     }
 }
