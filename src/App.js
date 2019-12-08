@@ -82,7 +82,7 @@ export class App extends Component {
     return (
       <Router>
         <div className="app">
-          <h1>darkmode Bank</h1>
+          <h1>banque sombre</h1>
 
           <div id='menu'>
             <button className='nav'>
