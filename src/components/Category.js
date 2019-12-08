@@ -2,45 +2,47 @@ import React, { Component } from 'react';
 
 class Category extends Component {
 
-    findCateg = () => {
+
+
+    findCategType = () => {
         let transactions = this.props.transactions
-        let breakdown = []
+        let categories = []
         for (let i = 0; i < transactions.length; i++) {
-            if (!breakdown
+            if (!categories
                 .includes(transactions[i].category)) {
-                breakdown
+                categories
                     .push(transactions[i].category)
             }
         }
-        return breakdown
+        return categories
     }
 
-    breakByCateg = () => {
-        const findCateg = this.findCateg()
+    sortByCateg = () => {
+        const findCateg = this.findCategType()
         let transactions = this.props.transactions
-        const result = []
+        const categArr = []
         for (let i = 0; i < findCateg.length; i++) {
             let categories = transactions
                 .filter(c => c.category === findCateg[i])
                 .map(c => c)
-            result.push(categories)
+            categArr.push(categories)
         }
-        return result
+        return categArr
     }
 
     render() {
-        let category = this.breakByCateg()
+        let categories = this.sortByCateg()
         return (
             <div>
-                {category.map((c,i) =>
+                {categories.map((c, i) =>
                     <div key={i}>
                         <h4> {c[0].category} </h4>
                         <div key={i}>
                             {c.map((c, i) =>
-                            <div key={i}>
-                                <i>{c.vendor}</i>
-                                ${c.amount} 
-                            </div>)}
+                                <div key={i}>
+                                    <i>{c.vendor}</i>
+                                    ${c.amount}
+                                </div>)}
                         </div>
                         <hr />
                     </div>
