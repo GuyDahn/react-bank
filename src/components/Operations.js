@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Snackbars  from './Snackbars'
 
 class Operations extends Component {
     constructor() {
@@ -7,7 +8,8 @@ class Operations extends Component {
         this.state = {
             amount: 0,
             vendor: "",
-            category: ""
+            category: "",
+            date: ""
         }
         this.updateText = this.updateText.bind(this)
     }
@@ -35,6 +37,10 @@ class Operations extends Component {
     }
 
     render() {
+        let state = this.state
+        let balance = this.props.balance
+        let displayAlert = this.props.displayAlert
+
         return (
             <div className='operations'>
                 <ul>
@@ -77,6 +83,12 @@ class Operations extends Component {
                         Whizraw
                 </button>
                 </Link>
+                {/* <Snackbars
+                    displayAlert={displayAlert}
+                    balance={balance}
+                    manageExpenses={this.manageExpenses}
+                    input={state}
+                /> */}
             </div>)
     }
 }

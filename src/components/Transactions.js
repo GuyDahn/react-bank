@@ -17,6 +17,7 @@ class Transactions extends Component {
                         <Transaction data={t} id={i}
                             removeTrans={this.props.removeTrans}
                         />
+                        <hr />
                     </div>
                 )}
             </div>)

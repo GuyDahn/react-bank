@@ -56,7 +56,8 @@ export class App extends Component {
     try {
       let transactions = [...this.state.transactions]
       let tid = transactions[id]._id
-      await axios.delete(`http://localhost:4200/transaction/${tid}`)
+      await axios
+        .delete(`http://localhost:4200/transaction/${tid}`)
       await this.componentDidMount()
     } catch (err) {
       console.log(err)
@@ -65,7 +66,8 @@ export class App extends Component {
 
   renderTransactions = async () => {
     try {
-      let transactions = await axios.get("http://localhost:4200/transactions")
+      let transactions =
+        await axios.get("http://localhost:4200/transactions")
       this.setState({
         transactions: transactions.data
       })
@@ -88,9 +90,11 @@ export class App extends Component {
             <button className='nav'>
               <Link to="/">Home</Link>
             </button>
+
             <button className='nav'>
               <Link to="/add">Add Transaction</Link>
             </button>
+            
             <button className='nav'>
               <Link to="/category">Categories</Link>
             </button>

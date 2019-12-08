@@ -89,6 +89,7 @@ ul {
 
 .single-trans {
   padding: 10px;
+  display: flex;
 }
 
 .dlt-btn {
