@@ -13,6 +13,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+@media screen and (max-width: 600px) {
+  .transactions {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .transactions {
+    font-size: 50%;
+  }
+}
+
 #amount {
   font-weight: 1000;
 }
@@ -55,10 +67,6 @@ h4 {
 
 .transactions {
   text-align: left;
-}
-
-.operations {
-  text-align: center;
 }
 
 a {

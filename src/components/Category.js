@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class Category extends Component {
+
     findCateg = () => {
         let transactions = this.props.transactions
         let breakdown = []
@@ -33,10 +34,9 @@ class Category extends Component {
             <div>
                 {category.map((c,i) =>
                     <div key={i}>
-
                         <h4> {c[0].category} </h4>
-
-                        <div key={i}> {c.map((c, i) =>
+                        <div key={i}>
+                            {c.map((c, i) =>
                             <div key={i}>
                                 <i>{c.vendor}</i>
                                 ${c.amount} 
