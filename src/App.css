@@ -10,7 +10,7 @@
 body {
   height: 100vh;
   background: #2c2828;
-  background-image: linear-gradient(#3e432e, #2c2828);
+  background-image: linear-gradient(1turn, #2c2828 80%, #3e432e);
   -webkit-font-smoothing: antialiased;
 }
 
