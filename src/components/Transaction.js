@@ -9,11 +9,15 @@ class Transaction extends Component {
 
     render() {
         return (
-            <div className={this.props.data.amount < 0 ? 'single-trans red' : 'single-trans green' } >
+            <div className=
+                {this.props.data.amount < 0 ?
+                    'single-trans red' : 'single-trans green'} >
                 <p>
                     Date:
                        <i>
-                        <Moment format="DD.MM.YY">{this.props.data.date}</Moment>
+                        <Moment format="DD.MM.YY">
+                            {this.props.data.date}
+                        </Moment>
                     </i>
                 </p>
                 <hr />

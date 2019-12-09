@@ -62,12 +62,11 @@ h1 {
 }
 
 .single-trans.green {
-  background-color: rgba(87, 170, 87, 0.452);
-  
+  background-color: rgba(0, 255, 0, 0.192);
 }
 
 .single-trans.red {
-  background-color: rgba(194, 77, 77, 0.479);
+  background-color: rgba(255, 0, 0, 0.192);
 }
 
 h4 {

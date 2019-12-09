@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Date from 'react-moment';
 
 class Operations extends Component {
     constructor() {
@@ -16,14 +17,16 @@ class Operations extends Component {
         this.props.addDepoz(
             this.state.amount,
             this.state.vendor,
-            this.state.category)
+            this.state.category,
+            this.state.date)
     }
 
     addWithdraw = () => {
         this.props.addWithdraw(
             this.state.amount,
             this.state.vendor,
-            this.state.category)
+            this.state.category,
+            this.state.date)
     }
 
     updateText = (event) => {

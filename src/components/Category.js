@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 class Category extends Component {
 
-
-
     findTransactionType = () => {
         let transactions = this.props.transactions
         let categories = []
