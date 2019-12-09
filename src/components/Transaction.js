@@ -9,7 +9,7 @@ class Transaction extends Component {
 
     render() {
         return (
-            <div className="single-trans">
+            <div className={this.props.data.amount < 0 ? 'single-trans red' : 'single-trans green' } >
                 <p>
                     Date:
                        <i>

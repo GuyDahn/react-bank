@@ -61,6 +61,15 @@ h1 {
   text-shadow: 1px 1px 0 rgba(23, 23, 23, 1), 1px 1px 0 rgba(23, 23, 23, 0.9), 1px 1px 0 rgba(23, 23, 23, 0.8), 2px 4px 0 rgba(23, 23, 23, 0.7), 5px 5px 0 rgba(23, 23, 23, 0.6), 6px 6px 0 rgba(23, 23, 23, 0.5), 7px 7px 0 rgba(23, 23, 23, 0.4), 8px 8px 0 rgba(23, 23, 23, 0.3), 9px 9px 0 rgba(23, 23, 23, 0.2), 10px 10px 0 rgba(23, 23, 23, 0.1);
 }
 
+.single-trans.green {
+  background-color: rgba(87, 170, 87, 0.452);
+  
+}
+
+.single-trans.red {
+  background-color: rgba(194, 77, 77, 0.479);
+}
+
 h4 {
   text-transform: uppercase;
   text-decoration: underline;
@@ -109,6 +118,7 @@ ul {
   margin-right: 10px;
   border-radius: 100mm;
   font-weight: 1000;
+  font-size: 18px;
 }
 
 .op-btn {

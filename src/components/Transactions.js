@@ -5,7 +5,7 @@ class Transactions extends Component {
 
     render() {
         return (
-            <div className="transactions">
+            <div className="transactions" >
                 <h3 id='balance'>
                     Total balance: ${this.props.balance}
                 </h3>
