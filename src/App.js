@@ -6,11 +6,14 @@ import Transactions from './components/Transactions'
 import Operations from './components/Operations'
 import Category from './components/Category'
 
+const transactionRoute = "http://localhost:4200/transaction"
+const TransactionsRoute = "http://localhost:4200/transactions"
+
 export class App extends Component {
   constructor() {
     super()
     this.state = {
-      transactions: [],
+      transactions: []
     }
   }
 
@@ -25,13 +28,13 @@ export class App extends Component {
 
   addDepoz = async (amount, vendor, category) => {
     try {
-      await axios.post("http://localhost:4200/transaction", {
+      await axios.post(transactionRoute, {
         amount: parseInt(amount),
         vendor: vendor,
         category: category.toLowerCase(),
         date: new Date()
       })
-      await this.renderTransactions()
+       this.renderTransactions()
     } catch (err) {
       console.log(err)
     }
@@ -39,13 +42,13 @@ export class App extends Component {
 
   addWithdraw = async (amount, vendor, category) => {
     try {
-      await axios.post("http://localhost:4200/transaction", {
+      await axios.post(transactionRoute, {
         amount: -parseInt(amount),
         vendor: vendor,
         category: category.toLowerCase(),
         date: new Date()
       })
-      await this.renderTransactions()
+       this.renderTransactions()
     } catch (err) {
       console.log(err)
     }
@@ -57,7 +60,7 @@ export class App extends Component {
       let tid = transactions[id]._id
       await axios
         .delete(`http://localhost:4200/transaction/${tid}`)
-      await this.renderTransactions()
+     this.renderTransactions()
     } catch (err) {
       console.log(err)
     }
@@ -66,7 +69,7 @@ export class App extends Component {
   renderTransactions = async () => {
     try {
       let transactions =
-        await axios.get("http://localhost:4200/transactions")
+        await axios.get(TransactionsRoute)
       this.setState({
         transactions: transactions.data
       })
