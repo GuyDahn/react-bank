@@ -6,8 +6,8 @@ import Transactions from './components/Transactions'
 import Operations from './components/Operations'
 import Category from './components/Category'
 
-const transactionRoute = "https://my-bank-by-guy.herokuapp.com/transaction"
-const TransactionsRoute = "https://my-bank-by-guy.herokuapp.com/transactions"
+const transactionRoute = "http://localhost:4200/transaction"
+const TransactionsRoute = "http://localhost:4200/transactions"
 
 export class App extends Component {
   constructor() {
