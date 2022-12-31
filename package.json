@@ -16,7 +16,7 @@
     "react-dom": "^16.4.1",
     "react-moment": "^0.9.6",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "5.0.1"
   },
   "devDependencies": {
     "babel-plugin-emotion": "^10.0.9",
@@ -24,7 +24,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^23.4.2",
+    "jest": "^29.3.1",
     "jest-emotion": "^10.0.10",
     "jest-expect-message": "github:Elevationacademy/jest-expect-message",
     "jest-transform-stub": "^1.0.0",
